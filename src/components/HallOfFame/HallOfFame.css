@@ -1,0 +1,24 @@
+.Title {
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.Table {
+  display:table;
+  width: 100%;
+  border-spacing: 20px;
+  left: 50%;
+  font-size: 13px;
+}
+.TableRow {
+  display: table-row;
+  width: auto;
+  clear: both;
+}
+.TableColumn {
+  float: left;
+  display: table-column;
+  width: 500px;
+}

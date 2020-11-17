@@ -1,0 +1,77 @@
+.Title {
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.Button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col_1 {
+  float: left;
+  width: 50%;
+}
+
+.col_2 {
+  float: left;
+  width: 50%;
+}
+
+.SaveButton {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 6px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-top: 25px;
+  margin-left: 42%;
+  border-radius: 5px;
+}
+
+.NewOrderForm {
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.Table {
+  display:table;
+  width: 1000px;
+  border-spacing: 20px;
+  margin-left: 350px;
+}
+.TableRow {
+  display: table-row;
+  width: auto;
+  clear: both;
+}
+.TableColumn {
+  float: left;
+  display: table-column;
+  width: 500px;
+}

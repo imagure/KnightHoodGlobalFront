@@ -1,0 +1,15 @@
+.Logo {
+  background-color: white;
+  height: 40px;
+  width: 100px;
+  margin-left: -30px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: "Pacifico";
+}
+
+.Logo img {
+  height: 100%;
+  width: 100px;
+}
