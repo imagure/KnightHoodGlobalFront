@@ -16,7 +16,7 @@ async function addArenaRow(data) {
     storage.ref(`/arena_images/${data.pictures[0].name}`).put(data.pictures[0]);
   }
   const file = await connectToApi();
-  const sheet = file.sheetsByIndex[4];
+  const sheet = file.sheetsByIndex[1];
   await sheet.addRow([
     "'" + data.name,
     "'" + data.points,
@@ -29,7 +29,7 @@ async function addBossRow(data) {
     storage.ref(`/boss_images/${data.pictures[0].name}`).put(data.pictures[0]);
   }
   const file = await connectToApi();
-  const sheet = file.sheetsByIndex[3];
+  const sheet = file.sheetsByIndex[2];
   await sheet.addRow([
     "'" + data.name,
     "'" + data.points,
