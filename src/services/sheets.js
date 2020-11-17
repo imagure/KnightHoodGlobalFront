@@ -12,28 +12,34 @@ async function connectToApi() {
 }
 
 async function addArenaRow(data) {
+  let image_url;
   if (data.pictures.length > 0) {
-    storage.ref(`/arena_images/${data.pictures[0].name}`).put(data.pictures[0]);
+    await storage.ref(`/arena_images/${data.pictures[0].name}`).put(data.pictures[0]);
+    image_url = await storage.ref().child(`/arena_images/${data.pictures[0].name}`).getDownloadURL();
   }
   const file = await connectToApi();
   const sheet = file.sheetsByIndex[1];
   await sheet.addRow([
     "'" + data.name,
     "'" + data.points,
-    "'" + data.guild
+    "'" + data.guild,
+    image_url
   ]);
 }
 
 async function addBossRow(data) {
+  let image_url;
   if (data.pictures.length > 0) {
-    storage.ref(`/boss_images/${data.pictures[0].name}`).put(data.pictures[0]);
+    await storage.ref(`/boss_images/${data.pictures[0].name}`).put(data.pictures[0]);
+    image_url = await storage.ref().child(`/boss_images/${data.pictures[0].name}`).getDownloadURL();
   }
   const file = await connectToApi();
   const sheet = file.sheetsByIndex[2];
   await sheet.addRow([
     "'" + data.name,
     "'" + data.points,
-    "'" + data.boss
+    "'" + data.boss,
+    image_url
   ]);
 }
 
