@@ -11,7 +11,7 @@ const Ranking = props => {
     if(rank[0][1]=="I") {
       if (rank[1]){
         let sortedArray = rank[1].sort(function(a, b) {
-          return parseInt(b[1]) - parseInt(a[1]);
+          return parseInt(b[1].replaceAll(".", "")) - parseInt(a[1].replaceAll(".", ""));
         });
         for (const [index, r] of sortedArray.entries()){
           let position;
@@ -41,7 +41,7 @@ const Ranking = props => {
     else if (rank[0][1]=="G") {
       if (rank[1]){
         let sortedArray = rank[1].sort(function(a, b) {
-          return parseInt(b[2]) - parseInt(a[2]);
+          return parseInt(b[2].replaceAll(".", "")) - parseInt(a[2].replaceAll(".", ""));
         });
         for (const [index, r] of sortedArray.entries()){
           let position;
@@ -72,7 +72,7 @@ const Ranking = props => {
     else if (rank[0][1]=="B") {
       if (rank[1]){
         let sortedArray = rank[1].sort(function(a, b) {
-          return parseInt(b[1]) - parseInt(a[1]);
+          return parseInt(b[1].replaceAll(".", "")) - parseInt(a[1].replaceAll(".", ""));
         });
         for (const [index, r] of sortedArray.entries()){
           let position;
