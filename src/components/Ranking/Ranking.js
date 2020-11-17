@@ -107,7 +107,7 @@ const Ranking = props => {
   return (
     <div className={classes.Title}>
       <RankingForm category={props.category}
-                   modalName="Submeta seu resultado"
+                   modalName="Submit"
                    onSavePointsButton={props.onSavePointsButton}/>
 
       <div className={classes.Table}>
