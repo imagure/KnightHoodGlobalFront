@@ -12,7 +12,7 @@ const HallOfFame = props => {
       for (const [index, r] of rank[1].entries()){
         let image_src;
         if(r[4]) {
-          image_src = "https://drive.google.com/uc?export=view&id="+ r[4];
+          image_src = r[4];
         } else {
           image_src = unknown_image;
         }
