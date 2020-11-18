@@ -16,6 +16,10 @@ const Home = props => {
       <br/>
       <br/>
       When submiting a guild boss picture, please be sure to get a image from you in game guild leaderboar. In this way, we can garantee that we are registering the score in the right Boss, and to the right player.
+      <br/>
+      <br/>
+      <br/>
+      Made by ❊𝔾𝕕ℍ𝔹𝕣❊𝕾𝖕𝖆𝖈𝖊𝕵𝖚𝖌𝖌𝖑𝖊𝖗 😉
       </div>
 
     </div>
