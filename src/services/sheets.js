@@ -49,7 +49,7 @@ async function readArenaEntries() {
   for (let sheet of file.sheetsByIndex) {
     if (sheet.title[1]=="A") {
       await sheet.loadCells();
-      data[sheet.title] = await sheet.getCellsInRange("A1:D1000");
+      data[sheet.title] = await sheet.getCellsInRange("A1:H100");
     }
   }
 
@@ -62,7 +62,7 @@ async function readBossEntries() {
   for (let sheet of file.sheetsByIndex) {
     if (sheet.title[1]=="B") {
       await sheet.loadCells();
-      data[sheet.title] = await sheet.getCellsInRange("A1:C1000");
+      data[sheet.title] = await sheet.getCellsInRange("A1:H15");
     }
   }
 
