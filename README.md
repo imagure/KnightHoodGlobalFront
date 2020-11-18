@@ -1,11 +1,29 @@
 # Knighthood Global Rankings
 
-Below the usual React App stuff
+This is a fan made KH app so we can play with some leaderboards 😉
 
-just run ``` npm start``` to run it...
+The app is linked to a Google Sheet document and a Firebase Storage.
+
+To be able to fully run it with a sheet and firebase, just declare the env vars below:
+
+Google Service Account client email:
+```REACT_APP_CLIENT_EMAIL```
+
+Google Service Account private key:
+```REACT_APP_PRIVATE_KEY```
+
+Firebase config data:
+```REACT_APP_FIREBASE_CONFIG```
+
+Google Sheet ID:
+```REACT_APP_SHEET_ID```
+
+Just run ```npm start``` to run it...
+
+Below you have the usual React App stuff...
 
 
-# Getting Started with Create React App
+## This is a ReactApp
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
