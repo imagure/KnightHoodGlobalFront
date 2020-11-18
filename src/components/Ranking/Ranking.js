@@ -40,13 +40,16 @@ const Ranking = props => {
             row_object[column] = r[i];
           }
         }
+        row_object.Position = position;
         rank_array.push(row_object);
       }
     }
 
     const ranking_name = rank[0].slice(3)  + " 👊";
 
-    ranking.push(<RankingItem  columns={columns}
+    const columns_names = ["Position"].concat([...columns]);
+
+    ranking.push(<RankingItem  columns={columns_names}
                                ranking_name={ranking_name}
                                ranking={rank_array} />);
   };
