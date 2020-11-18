@@ -5,7 +5,7 @@ import Ranking from '../../components/Ranking/Ranking';
 import classes from './ArenaRanking.css';
 
 import { addArenaRow,
-         readIndividualRow } from '../../services/sheets';
+         readArenaEntries } from '../../services/sheets';
 
 class ArenaRankingBuilder extends Component {
   state = {
@@ -14,7 +14,7 @@ class ArenaRankingBuilder extends Component {
   }
 
   async componentWillMount(){
-    const response = await readIndividualRow();
+    const response = await readArenaEntries();
     this.setState({rankings: response});
   }
 

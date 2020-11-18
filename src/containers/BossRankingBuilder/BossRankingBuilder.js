@@ -5,7 +5,7 @@ import Ranking from '../../components/Ranking/Ranking';
 import classes from './BossRanking.css';
 
 import { addBossRow,
-         readBossRow } from '../../services/sheets';
+         readBossEntries } from '../../services/sheets';
 
 class BossRankingBuilder extends Component {
   state = {
@@ -14,17 +14,8 @@ class BossRankingBuilder extends Component {
   }
 
   async componentWillMount(){
-    const response = await readBossRow();
-    const rankings = {};
-    for (let entry of Object.entries(response)) {
-      for (let rank of entry[1]) {
-        if(!rankings["[B] "+rank[2]]) {
-          rankings["[B] "+rank[2]] = [];
-        }
-        rankings["[B] "+rank[2]].push(rank);
-      }
-    }
-    this.setState({rankings: rankings});
+    const response = await readBossEntries();
+    this.setState({rankings: response});
   }
 
   async componentDidUpdate(){

@@ -43,26 +43,26 @@ async function addBossRow(data) {
   ]);
 }
 
-async function readIndividualRow() {
+async function readArenaEntries() {
   const file = await connectToApi();
   const data = {};
   for (let sheet of file.sheetsByIndex) {
-    if (sheet.title[1]=="I" || sheet.title[1]=="G") {
+    if (sheet.title[1]=="A") {
       await sheet.loadCells();
-      data[sheet.title] = await sheet.getCellsInRange("A2:D1000");
+      data[sheet.title] = await sheet.getCellsInRange("A1:D1000");
     }
   }
 
   return data;
 }
 
-async function readBossRow() {
+async function readBossEntries() {
   const file = await connectToApi();
   const data = {};
   for (let sheet of file.sheetsByIndex) {
     if (sheet.title[1]=="B") {
       await sheet.loadCells();
-      data[sheet.title] = await sheet.getCellsInRange("A2:C1000");
+      data[sheet.title] = await sheet.getCellsInRange("A1:C1000");
     }
   }
 
@@ -93,8 +93,8 @@ async function readHallOfFame() {
 export {
   addArenaRow,
   addBossRow,
-  readIndividualRow,
+  readArenaEntries,
   readGuildRow,
-  readBossRow,
+  readBossEntries,
   readHallOfFame
 }
