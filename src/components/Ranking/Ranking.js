@@ -51,11 +51,28 @@ const Ranking = props => {
                                ranking={rank_array} />);
   };
 
+  const returnButtons = () => {
+    if (props.category == "A") {
+      return <div>
+             <RankingForm category={"AI"}
+                   modalName="Submit Individual Score"
+                   onSavePointsButton={props.onSavePointsButton}/>
+             <br/>
+             <RankingForm category={"AG"}
+                          modalName="Submit Guild Score"
+                          onSavePointsButton={props.onSavePointsButton}/></div>
+    }
+    else if(props.category == "B") {
+      return <RankingForm category={props.category}
+                modalName="Submit"
+                onSavePointsButton={props.onSavePointsButton}/>
+    }
+    return null;
+  }
+
   return (
     <div className={classes.Title}>
-      <RankingForm category={props.category}
-                   modalName="Submit"
-                   onSavePointsButton={props.onSavePointsButton}/>
+      {returnButtons()}
 
       <div className={classes.Table}>
         <div className={classes.TableRow}>

@@ -42,7 +42,7 @@ const RankingForm = props => {
     state["pictures"] = state["pictures"].concat(pictureFiles);
   }
 
-  if(props.category=="A") {
+  if(props.category=="AI") {
     return (
       <div className={classes.Title}>
         <button type="button"
@@ -138,7 +138,114 @@ const RankingForm = props => {
               <button className={classes.SaveButton}
                       onClick={e => {props.onSavePointsButton(state) &&
                                            closeModal()} }
-                > Enviar
+                > Submit
+              </button>
+            </div>
+          </div>
+
+        </form>
+
+        </Modal>
+      </div>
+    )
+  }
+  else if(props.category=="AG") {
+    return (
+      <div className={classes.Title}>
+        <button type="button"
+                onClick={openModal}
+                class={classes.Button}>
+          {props.modalName}
+        </button>
+
+        <Modal
+          isOpen={state.isModalOpen}
+          onRequestClose={closeModal}
+          style={ModalStyles}
+        >
+
+        {props.modalName}
+
+        <br/>
+        <br/>
+
+        <form className={classes.Form}>
+
+          <div className={classes.row}>
+            <div className={classes.col_1}>
+              <label>
+                Guild Name
+              </label>
+            </div>
+
+            <br/>
+
+            <div className={classes.col_2}>
+              <input type="text"
+                     onChange={(e) => handleChange("name", e.target)}></input>
+            </div>
+          </div>
+
+          <br/>
+
+          <div className={classes.row}>
+            <div className={classes.col_1}>
+              <label>
+                Points
+              </label>
+            </div>
+
+            <br/>
+
+            <div className={classes.col_2}>
+              <input type="text"
+                     onChange={(e) => handleChange("points", e.target)}></input>
+            </div>
+          </div>
+
+          <br/>
+
+          <div className={classes.row}>
+            <div className={classes.col_1}>
+              <label>
+                Position
+              </label>
+            </div>
+
+            <br/>
+
+            <div className={classes.col_2}>
+              <input type="text"
+                     onChange={(e) => handleChange("guild", e.target)}></input>
+            </div>
+          </div>
+
+          <br/>
+
+          <div className={classes.row}>
+            <div className={classes.col_1}>
+              <label>
+                Image
+              </label>
+            </div>
+
+            <br/>
+
+             <ImageUploader
+               withIcon={true}
+               buttonText="Choose an image"
+               onChange={onDrop}
+               imgExtension={[".jpg", ".jpeg", ".png"]}
+               maxFileSize={5242880}
+             />
+          </div>
+
+          <div className={classes.row}>
+            <div className={classes.col_1}>
+              <button className={classes.SaveButton}
+                      onClick={e => {props.onSavePointsButton(state) &&
+                                           closeModal()} }
+                > Submit
               </button>
             </div>
           </div>
@@ -281,7 +388,7 @@ const RankingForm = props => {
               <button className={classes.SaveButton}
                       onClick={e => {props.onSavePointsButton(state) &&
                                            closeModal()} }
-                > Enviar
+                > Submit
               </button>
             </div>
           </div>
