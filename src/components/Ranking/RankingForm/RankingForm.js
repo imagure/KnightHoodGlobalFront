@@ -126,7 +126,7 @@ const RankingForm = props => {
 
              <ImageUploader
                withIcon={true}
-               buttonText="Escolha a imagem"
+               buttonText="Choose an image"
                onChange={onDrop}
                imgExtension={[".jpg", ".jpeg", ".png"]}
                maxFileSize={5242880}
@@ -267,7 +267,7 @@ const RankingForm = props => {
 
                <ImageUploader
                  withIcon={true}
-                 buttonText="Escolha a imagem"
+                 buttonText="Choose an image"
                  onChange={onDrop}
                  imgExtension={[".jpg", ".jpeg", ".png"]}
                  maxFileSize={5242880}
