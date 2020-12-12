@@ -43,6 +43,21 @@ async function addBossRow(data) {
   ]);
 }
 
+async function addRiftRow(data) {
+  let image_url;
+  if (data.pictures.length > 0) {
+    await storage.ref(`/rift_images/${data.pictures[0].name}`).put(data.pictures[0]);
+    image_url = await storage.ref().child(`/boss_images/${data.pictures[0].name}`).getDownloadURL();
+  }
+  const file = await connectToApi();
+  const sheet = file.sheetsByIndex[2];
+  await sheet.addRow([
+    "'" + data.name,
+    "'" + data.points,
+    image_url
+  ]);
+}
+
 async function readArenaEntries() {
   const file = await connectToApi();
   const data = {};
@@ -90,11 +105,26 @@ async function readHallOfFame() {
   return data;
 }
 
+async function readRiftEntries() {
+  const file = await connectToApi();
+  const data = {};
+  for (let sheet of file.sheetsByIndex) {
+    if (sheet.title[1]=="R") {
+      await sheet.loadCells();
+      data[sheet.title] = await sheet.getCellsInRange("A1:H15");
+    }
+  }
+
+  return data;
+}
+
 export {
   addArenaRow,
   addBossRow,
+  addRiftRow,
   readArenaEntries,
   readGuildRow,
   readBossEntries,
-  readHallOfFame
+  readHallOfFame,
+  readRiftEntries
 }

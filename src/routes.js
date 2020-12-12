@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import ArenaRankingBuilder from './containers/ArenaRankingBuilder/ArenaRankingBuilder';
 import BossRankingBuilder from './containers/BossRankingBuilder/BossRankingBuilder';
 import HallOfFameBuilder from './containers/HallOfFameBuilder/HallOfFameBuilder';
+import RiftRankingBuilder from './containers/RiftRankingBuilder/RiftRankingBuilder';
 
 class Routes extends Component {
 
@@ -18,6 +19,7 @@ class Routes extends Component {
             <Route exact path="/arena_ranking" component={ArenaRankingBuilder} />
             <Route exact path="/boss_ranking" component={BossRankingBuilder} />
             <Route exact path="/hall_of_fame" component={HallOfFameBuilder} />
+            <Route exact path="/rift_ranking" component={RiftRankingBuilder} />
           </Layout>
           <Route path="*" component={() => <h1>Não tem nada aqui!</h1>} />
         </Switch>
