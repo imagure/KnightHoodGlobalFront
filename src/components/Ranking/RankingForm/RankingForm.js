@@ -338,6 +338,10 @@ const RankingForm = props => {
                   label: "Rahab"
                 },
                 {
+                  value: "Leppaludi",
+                  label: "Leppaludi"
+                },
+                {
                   value: "Aegaeon",
                   label: "Aegaeon"
                 },
